@@ -16,6 +16,7 @@ module.exports = {
   },
 
   rules: {
+    'linebreak-style': ['error', 'windows'],
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': 'off',
     'import/extensions': 'off',
