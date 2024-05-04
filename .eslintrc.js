@@ -68,8 +68,14 @@ module.exports = {
   overrides: [
     // for Ember node files
     {
-      files: ['ember-cli-build.js', 'testem.js', 'config/**/*.js', 'lib/*/index.js'],
-
+      files: [
+        '.template-lintrc.js',
+        'ember-cli-build.js',
+        'testem.js',
+        'blueprints/*/index.js',
+        'config/**/*.js',
+        'lib/*/index.js'
+      ],
       parserOptions: {
         sourceType: 'script',
         ecmaVersion: 2015
