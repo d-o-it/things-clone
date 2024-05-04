@@ -15,6 +15,10 @@ module.exports = function(environment) {
       tooltipClass: 'c-tooltip'
     },
 
+    'ember-local-storage': {
+      namespace: true, // will use the modulePrefix
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
