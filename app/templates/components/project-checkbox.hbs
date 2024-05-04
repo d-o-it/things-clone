@@ -13,7 +13,7 @@
 {{else}}
   {{#let (and @project.isSomeday (not @project.isCompleted)) as |isSomeday|}}
     <div
-      class="c-checkbox c-checkbox--pie js-checkbox {{if @isBig "c-checkbox--big"}} {{if isSomeday 'c-checkbox--someday'}}"
+      class="c-checkbox c-checkbox--pie js-checkbox {{if @isBig "c-checkbox--big"}} {{if isSomeday "c-checkbox--someday"}}"
       title="Mark as completed"
       {{action (optional (if @project.hasActiveTasks null @markProjectAsCompleted))}}
     >

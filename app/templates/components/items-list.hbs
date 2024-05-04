@@ -2,7 +2,7 @@
   {{#animated-container}}
     {{#animated-each @items use=eachTransition duration=200 as |item|}}
       {{#sortable-item
-        class=(if (is-selected item) 'is-selected')
+        class=(if (is-selected item) "is-selected")
         model=item
         group=group
         distance=2

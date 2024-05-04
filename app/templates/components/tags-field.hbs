@@ -6,7 +6,7 @@
 }}
   {{#each @itemTags as |tag|}}
     <div
-      class="c-tags-field__tag {{if (eq tag selectedTag) 'is-selected'}}"
+      class="c-tags-field__tag {{if (eq tag selectedTag) "is-selected"}}"
       {{action "selectTag" tag}}
       data-test-tags-field-tag={{tag.id}}
     >
@@ -43,7 +43,7 @@
         <div class="c-options c-options--small js-dropdown">
           <div class="c-options__section">
             {{#each this.tagOptions as |tag|}}
-              <div class="c-options__item {{if (eq tag this.activeTagOption) 'is-active'}}"
+              <div class="c-options__item {{if (eq tag this.activeTagOption) "is-active"}}"
                 data-test-tags-field-option={{tag.id}}
                 {{action "addTag" tag}}
               >
@@ -55,7 +55,7 @@
               </div>
             {{/each}}
 
-            <div class="c-options__item {{if (not this.activeTagOption) 'is-active'}}"
+            <div class="c-options__item {{if (not this.activeTagOption) "is-active"}}"
               data-test-tags-field-option="create"
               {{action "addNewTag"}}
             >

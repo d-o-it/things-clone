@@ -1,6 +1,6 @@
 <div class="c-item__line">
   <div
-    class="c-checkbox js-checkbox {{if @task.isProcessed 'is-checked'}}"
+    class="c-checkbox js-checkbox {{if @task.isProcessed "is-checked"}}"
     {{action @toggleCheckbox}}
   >
     {{#if @task.isCompleted}}
@@ -30,12 +30,12 @@
 
   {{#if (and @task.project @isProjectShown)}}
     <div class="c-item__project">
-      {{if @task.project.name @task.project.name 'New project'}}
+      {{if @task.project.name @task.project.name "New project"}}
     </div>
   {{/if}}
 
   <div
-    class="c-item__name {{if (not @task.name) 'c-item__name--placeholder'}}"
+    class="c-item__name {{if (not @task.name) "c-item__name--placeholder"}}"
     data-test-task-name
   >
     {{if @task.name @task.name @placeholder}}
