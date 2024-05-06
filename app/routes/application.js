@@ -25,7 +25,7 @@ export default Route.extend({
 
   actions: {
     replaceRoute(route) {
-      this.replaceWith(route);
+      this.transitionTo(route);
     },
 
     setItemName(item, name) {

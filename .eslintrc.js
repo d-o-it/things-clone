@@ -69,6 +69,7 @@ module.exports = {
     // for Ember node files
     {
       files: [
+        '.eslintrc.js',
         '.template-lintrc.js',
         'ember-cli-build.js',
         'testem.js',
