@@ -3,7 +3,7 @@
     {{svg-jar "inbox" class="c-icon c-icon--inbox c-icon--18"}}
 
     <div class="c-sidebar-nav__text">
-      Inbox
+      {{t "sidebar-nav.c-sidebar-nav-text.inbox"}}
     </div>
 
     {{#let (filter-by "isShownInInbox" this.data.tasks) as |inboxItems|}}
@@ -21,7 +21,7 @@
     {{svg-jar "today" class="c-icon c-icon--today c-icon--18"}}
 
     <div class="c-sidebar-nav__text">
-      Today
+      {{t "sidebar-nav.c-sidebar-nav-text.today"}}
     </div>
 
     {{#let (filter-by "isShownInToday" this.data.tasksAndProjects) as |todayItems|}}
@@ -37,7 +37,7 @@
     {{svg-jar "anytime" class="c-icon c-icon--anytime c-icon--18"}}
 
     <div class="c-sidebar-nav__text">
-      Anytime
+      {{t "sidebar-nav.c-sidebar-nav-text.anytime"}}
     </div>
   {{/link-to}}
 
@@ -45,7 +45,7 @@
     {{svg-jar "upcoming" class="c-icon c-icon--upcoming c-icon--18"}}
 
     <div class="c-sidebar-nav__text">
-      Upcoming
+      {{t "sidebar-nav.c-sidebar-nav-text.upcoming"}}
     </div>
   {{/link-to}}
 
@@ -53,7 +53,7 @@
     {{svg-jar "someday" class="c-icon c-icon--someday c-icon--18"}}
 
     <div class="c-sidebar-nav__text">
-      Someday
+      {{t "sidebar-nav.c-sidebar-nav-text.someday"}}
     </div>
   {{/link-to}}
 </div>
@@ -63,7 +63,7 @@
     {{svg-jar "logbook" class="c-icon c-icon--logbook c-icon--18"}}
 
     <div class="c-sidebar-nav__text">
-      Logbook
+      {{t "sidebar-nav.c-sidebar-nav-text.logbook"}}
     </div>
   {{/link-to}}
 
@@ -71,7 +71,7 @@
     {{svg-jar "trash" class="c-icon c-icon--trash c-icon--18"}}
 
     <div class="c-sidebar-nav__text">
-      Trash
+      {{t "sidebar-nav.c-sidebar-nav-text.trash"}}
     </div>
   {{/link-to}}
 </div>
@@ -89,7 +89,7 @@
             {{progress-pie class="c-icon c-icon--project c-icon--18" progress=project.progress}}
 
             <div class="c-sidebar-nav__text">
-              {{or project.name "New project"}}
+              {{or project.name (t "item-project.placeholder")}}
             </div>
           </div>
         {{/link-to}}

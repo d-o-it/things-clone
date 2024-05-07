@@ -30,7 +30,7 @@
 
   {{#if (and @task.project @isProjectShown)}}
     <div class="c-item__project">
-      {{if @task.project.name @task.project.name "New project"}}
+      {{if @task.project.name @task.project.name (t "item-project.placeholder")}}
     </div>
   {{/if}}
 

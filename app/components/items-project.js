@@ -4,14 +4,18 @@ import { computed } from '@ember/object';
 import { alias, not } from '@ember/object/computed';
 
 export default Component.extend({
+  i18n: service(),
   router: service(),
   itemSelector: service(),
   classNames: ['c-item', 'js-item'],
   classNameBindings: ['isCompleted', 'isCanceled', 'isSelected', 'isSortable'],
-  placeholder: 'New Project',
   isCompleted: alias('item.isCompleted'),
   isCanceled: alias('item.isCanceled'),
   isSortable: not('isEditing'),
+
+  placeholder: computed('i18n.locale', function() {
+    return this.i18n.t('item-project.placeholder');
+  }),
 
   isSelected: computed('itemSelector.items.[]', function() {
     return this.itemSelector.isSelected(this.item);

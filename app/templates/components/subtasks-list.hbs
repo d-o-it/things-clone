@@ -30,7 +30,7 @@
   {{text-input
     class="c-subtasks__name"
     id="new-subtask"
-    placeholder="New Subtask"
+    placeholder=(t "subtasks-list.c-subtasks.placeholder")
     value=this.newItemName
     update=(action (mut this.newItemName))
     enter=(queue (action "createItem" this.newItemName) (action (mut this.newItemName) ""))

@@ -5,6 +5,7 @@ import { computed } from '@ember/object';
 import moment from 'moment';
 
 export default Component.extend({
+  i18n: service(),
   clock: service(),
   deadline: null,
   classNameBindings: ['isToday', 'isOverdue'],
@@ -19,14 +20,14 @@ export default Component.extend({
     return moment(date).diff(this.deadline, 'days') * -1;
   }),
 
-  deadlineInfo: computed('daysLeft', function() {
+  deadlineInfo: computed('i18n.locale', 'daysLeft', function() {
     if (this.isToday) {
-      return 'today';
+      return this.i18n.t('deadline-info.today');
     }
 
     let daysCount = Math.abs(this.daysLeft);
-    let daysOrDay = `day${daysCount > 1 ? 's' : ''}`;
-    let leftOrAgo = this.isOverdue ? 'ago' : 'left';
+    let daysOrDay = this.i18n.t('deadline-info.days', { count: daysCount });
+    let leftOrAgo = this.isOverdue ? this.i18n.t('deadline-info.ago') : this.i18n.t('deadline-info.left');
 
     return `${daysCount} ${daysOrDay} ${leftOrAgo}`;
   })

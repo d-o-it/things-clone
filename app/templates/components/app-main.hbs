@@ -15,7 +15,7 @@
     <div class="c-folder__title">
       {{svg-jar @folder class=(concat "c-icon c-icon--24 c-icon--" @folder)}}
 
-      <div class="c-folder__title-text">{{@folder}}</div>
+      <div class="c-folder__title-text">{{t (concat "sidebar-nav.c-sidebar-nav-text." @folder) }}</div>
     </div>
   {{/if}}
 

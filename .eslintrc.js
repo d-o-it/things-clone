@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
   root: true,
 
@@ -46,7 +48,6 @@ module.exports = {
     'ember/order-in-controllers': 'error',
     'ember/order-in-models': 'error',
     'ember/order-in-routes': 'error',
-    'ember/no-jquery': 'error',
 
     'space-before-function-paren': [
       'error',

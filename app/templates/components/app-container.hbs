@@ -6,13 +6,13 @@
     <div class="c-sidebar-actions">
       <div
         class="c-sidebar-actions__item"
-        title="Create a new list"
+        title={{t "app-container.c-sidebar-actions.title"}}
         {{action @createProject}}
       >
         {{svg-jar "plus" class="c-sidebar-actions__icon c-sidebar-actions__icon--plus"}}
 
         <div class="c-sidebar-actions__text">
-          New Project
+          {{t "app-container.c-sidebar-actions.text"}}
         </div>
       </div>
     </div>
@@ -51,7 +51,7 @@
         moveToInbox=(queue (action "moveSelectedTasksToInbox") close)
         moveToProject=(queue (action "moveSelectedTasksToProject") close)
       )
-      title="Move"
+      title=(t "app-container.modal.move")
       close=close
     )}}
   {{/let}}
@@ -63,7 +63,7 @@
       body=(component "when-options"
         setWhen=(queue (action "setSelectedItemsWhen") close)
       )
-      title="When"
+      title=(t "app-container.modal.when")
       close=close
     )}}
   {{/let}}
@@ -75,7 +75,7 @@
       body=(component "deadline-options"
         setDeadline=(queue (action "setSelectedItemsDeadline") close)
       )
-      title="Deadline"
+      title=(t "app-container.modal.deadline")
       close=close
     )}}
   {{/let}}
@@ -98,7 +98,7 @@
       {{svg-jar "plus" class="c-floating-button__iner__icon"}}
 
       {{#attach-tooltip hideOn="mouseleave click" showDelay="700"}}
-        Create New To-Do
+        {{t "app-container.attach-tooltip.text"}}
       {{/attach-tooltip}}
     </div>
   </div>

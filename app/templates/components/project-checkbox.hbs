@@ -1,7 +1,7 @@
 {{#if @project.isProcessed}}
   <div
     class="c-checkbox c-checkbox--project is-checked js-checkbox {{if @isBig "c-checkbox--big"}}"
-    title="Mark project as uncompleted"
+    title={{t "project-checkbox.c-checkbox.mark_uncompleted"}}
     {{action @markProjectAsNew}}
   >
     {{#if @project.isCompleted}}
@@ -14,7 +14,7 @@
   {{#let (and @project.isSomeday (not @project.isCompleted)) as |isSomeday|}}
     <div
       class="c-checkbox c-checkbox--pie js-checkbox {{if @isBig "c-checkbox--big"}} {{if isSomeday "c-checkbox--someday"}}"
-      title="Mark as completed"
+      title={{t "project-checkbox.c-checkbox.mark_completed"}}
       {{action (optional (if @project.hasActiveTasks null @markProjectAsCompleted))}}
     >
       {{progress-pie
@@ -30,25 +30,22 @@
       }}
         <div class="c-popover__inner">
           <div class="c-popover__title">
-            {{#let (eq @project.activeTasks.length 1) as |hasOneTask|}}
-              This project contains {{@project.activeTasks.length}} incomplete to-do{{if hasOneTask "" "s"}}.
-              <br>
-              What would you like to do with {{if hasOneTask "it" "them"}}?
-            {{/let}}
+            {{t "project-checkbox.popover.title" count=@project.activeTasks.length}}
+            {{t "project-checkbox.popover.what_todo" count=@project.activeTasks.length}}
           </div>
 
           <div
             class="c-popover__option"
             {{action @markProjectAsCompleted "completed"}}
           >
-            Mark as Completed
+            {{t "project-checkbox.c-checkbox.mark_completed"}}
           </div>
 
           <div
             class="c-popover__option"
             {{action @markProjectAsCompleted "canceled"}}
           >
-            Mark as Cancelled
+            {{t "project-checkbox.c-checkbox.mark_canceled"}}
           </div>
         </div>
       {{/attach-popover}}

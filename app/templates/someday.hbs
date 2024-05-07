@@ -18,7 +18,7 @@
   {{#if hasActiveProjects}}
     <div class="c-folder__buttons">
       <button class="c-folder__button" {{action (toggle "isProjectListShown" this)}}>
-        {{if isProjectListShown "Hide" "Show"}} items from active projects
+        {{if isProjectListShown (t "someday.c-folder.button.active_items.hide") (t "someday.c-folder.button.active_items.show")}}
       </button>
     </div>
   {{/if}}

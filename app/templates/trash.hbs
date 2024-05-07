@@ -7,7 +7,7 @@
     <button
       class="c-folder__button c-folder__button--action"
     >
-      Empty Trash
+      {{t "trash.c-folder.button.empty"}}
 
       {{#attach-popover
         class="c-popover"
@@ -17,14 +17,14 @@
       }}
         <div class="c-popover__inner">
           <div class="c-popover__title">
-            Are you sure you want to remove the items in the Trash permanently?
+            {{t "trash.c-popover.title"}}
           </div>
 
           <div
             class="c-popover__option c-popover__option--danger"
             {{action (route-action "destroyDeletedItems")}}
           >
-            Empty Trash
+            {{t "trash.c-folder.button.empty"}}
           </div>
         </div>
       {{/attach-popover}}

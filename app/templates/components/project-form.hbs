@@ -9,7 +9,7 @@
 
     {{text-input
       class="c-item-form__project-input js-name-field"
-      placeholder="New project"
+      placeholder=(t "project-form.c-item-form-project-input.placeholder")
       value=this.nameFieldValue
       autoresize=true
       max-width=400
@@ -47,7 +47,7 @@
               {{#if @project.isProcessed}}
                 <div class="c-dropdown__item" {{action (queue dropdown.actions.close @markProjectAsNew)}}>
                   {{svg-jar "uncompleted-project" class="c-dropdown__item-icon"}}
-                  <div class="c-dropdown__item-text">Mark as uncompleted</div>
+                  <div class="c-dropdown__item-text">{{t "project-form.dropdown-item.text.mark_uncompleted"}}</div>
                 </div>
               {{else}}
                 <div
@@ -55,7 +55,7 @@
                   {{action (optional (if @project.hasActiveTasks null (queue dropdown.actions.close @markProjectAsCompleted)))}}
                 >
                   {{svg-jar "completed-project" class="c-dropdown__item-icon"}}
-                  <div class="c-dropdown__item-text">Mark as completed</div>
+                  <div class="c-dropdown__item-text">{{t "project-form.dropdown-item.text.mark_completed"}}</div>
 
                   {{#attach-popover
                     class="c-popover"
@@ -66,25 +66,22 @@
                   }}
                     <div class="c-popover__inner">
                       <div class="c-popover__title">
-                        {{#let (eq @project.activeTasks.length 1) as |hasOneTask|}}
-                          This project contains {{@project.activeTasks.length}} incomplete to-do{{if hasOneTask "" "s"}}.
-                          <br>
-                          What would you like to do with {{if hasOneTask "it" "them"}}?
-                        {{/let}}
+                        {{t "project-form.popover.title" count=@project.activeTasks.length}}
+                        {{t "project-form.popover.what_todo" count=@project.activeTasks.length}}
                       </div>
 
                       <div
                         class="c-popover__option"
                         {{action (queue (action @markProjectAsCompleted "completed") dropdown.actions.close)}}
                       >
-                        Mark as Completed
+                        {{t "project-form.c-popover.option.mark_completed"}}
                       </div>
 
                       <div
                         class="c-popover__option"
                         {{action (queue (action @markProjectAsCompleted "canceled") dropdown.actions.close)}}
                       >
-                        Mark as Cancelled
+                        {{t "project-form.c-popover.option.mark_canceled"}}
                       </div>
                     </div>
                   {{/attach-popover}}
@@ -97,7 +94,7 @@
               >
                 {{svg-jar "upcoming" class="c-dropdown__item-icon"}}
 
-                <div class="c-dropdown__item-text">When</div>
+                <div class="c-dropdown__item-text">{{t "project-form.c-dropdown-item.when"}}</div>
               </div>
 
               <div
@@ -106,18 +103,18 @@
               >
                 {{svg-jar "flag" class="c-dropdown__item-icon"}}
 
-                <div class="c-dropdown__item-text">Add deadline</div>
+                <div class="c-dropdown__item-text">{{t "project-form.c-dropdown-item.add_deadline"}}</div>
               </div>
 
               {{#if @project.isDeleted}}
                 <div class="c-dropdown__item" {{action (queue dropdown.actions.close @undeleteProject)}}>
                   {{svg-jar "redo" class="c-dropdown__item-icon"}}
-                  <div class="c-dropdown__item-text">Recover deleted project</div>
+                  <div class="c-dropdown__item-text">{{t "project-form.c-dropdown-item.recover_deleted"}}</div>
                 </div>
               {{else}}
                 <div class="c-dropdown__item" {{action (queue dropdown.actions.close @deleteProject)}}>
                   {{svg-jar "delete" class="c-dropdown__item-icon"}}
-                  <div class="c-dropdown__item-text">Delete project</div>
+                  <div class="c-dropdown__item-text">{{t "project-form.c-dropdown-item.delete"}}</div>
                 </div>
               {{/if}}
             </div>
@@ -217,7 +214,7 @@
       class="c-item-form__notes js-notes-field"
       id="project-notes"
       value=this.notesFieldValue
-      placeholder="Notes"
+      placeholder=(t "project-form.c-item-form-notes.placeholder")
       autoresize=true
       max-rows=10
       update=(action (mut this.notesFieldValue))

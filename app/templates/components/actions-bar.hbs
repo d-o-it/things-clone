@@ -6,12 +6,12 @@
     {{svg-jar "move" class="c-actions-bar__icon"}}
 
     <div class="c-actions-bar__text">
-      Move
+      {{t "actions-bar.c-actions-bar.move"}}
     </div>
 
     {{#attach-tooltip hideOn="mouseleave click" showDelay="700"}}
-      Move selected items
-      <br>to another list
+      {{t "actions-bar.c-actions-bar.move_selected"}}
+      <br>{{t "actions-bar.c-actions-bar.to_other_list"}}
     {{/attach-tooltip}}
   </div>
 
@@ -22,12 +22,12 @@
     {{svg-jar "upcoming" class="c-actions-bar__icon"}}
 
     <div class="c-actions-bar__text">
-      When
+      {{t "actions-bar.c-actions-bar.when"}}
     </div>
 
     {{#attach-tooltip hideOn="mouseleave click" showDelay="700"}}
-      Decide when to start
-      <br>Today or Later?
+      {{t "actions-bar.c-actions-bar.when_to_start"}}
+      <br>{{t "actions-bar.c-actions-bar.today_later"}}
     {{/attach-tooltip}}
   </div>
 
@@ -36,11 +36,11 @@
       {{svg-jar "redo" class="c-actions-bar__icon"}}
 
       <div class="c-actions-bar__text">
-        Put back
+        {{t "actions-bar.c-actions-bar.put_back"}}
       </div>
 
       {{#attach-tooltip hideOn="mouseleave click" showDelay="700"}}
-        Recover selected items
+        {{t "actions-bar.c-actions-bar.recover_selected"}}
       {{/attach-tooltip}}
     </div>
   {{else}}
@@ -48,11 +48,11 @@
       {{svg-jar "delete2" class="c-actions-bar__icon c-actions-bar__icon--delete"}}
 
       <div class="c-actions-bar__text">
-        Delete
+        {{t "actions-bar.c-actions-bar.delete"}}
       </div>
 
       {{#attach-tooltip hideOn="mouseleave click" showDelay="700"}}
-        Delete selected items
+        {{t "actions-bar.c-actions-bar.delete_selected"}}
       {{/attach-tooltip}}
     </div>
   {{/if}}
@@ -77,7 +77,7 @@
             >
               {{svg-jar "tag" class="c-dropdown__item-icon"}}
 
-              <div class="c-dropdown__item-text">Set Tags</div>
+              <div class="c-dropdown__item-text">{{t "actions-bar.c-actions-bar.set_tags"}}</div>
             </div>
           {{/if}}
 
@@ -88,7 +88,7 @@
             >
               {{svg-jar "flag" class="c-dropdown__item-icon"}}
 
-              <div class="c-dropdown__item-text">Set Deadline</div>
+              <div class="c-dropdown__item-text">{{t "actions-bar.c-actions-bar.set_deadline"}}</div>
             </div>
           {{/if}}
 
@@ -99,7 +99,7 @@
             >
               {{svg-jar "mark-as-uncompleted" class="c-dropdown__item-icon"}}
 
-              <div class="c-dropdown__item-text">Mark as Incomplete</div>
+              <div class="c-dropdown__item-text">{{t "actions-bar.c-actions-bar.mark_incomplete"}}</div>
             </div>
           {{/if}}
 
@@ -110,7 +110,7 @@
             >
               {{svg-jar "mark-as-completed" class="c-dropdown__item-icon"}}
 
-              <div class="c-dropdown__item-text">Mark as Completed</div>
+              <div class="c-dropdown__item-text">{{t "actions-bar.c-actions-bar.mark_completed"}}</div>
             </div>
           {{/if}}
 
@@ -120,7 +120,7 @@
           >
             {{svg-jar "mark-as-canceled" class="c-dropdown__item-icon"}}
 
-            <div class="c-dropdown__item-text">Mark as Canceled</div>
+            <div class="c-dropdown__item-text">{{t "actions-bar.c-actions-bar.mark_canceled"}}</div>
           </div>
         </div>
       </div>

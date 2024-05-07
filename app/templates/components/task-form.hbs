@@ -34,7 +34,7 @@
       id="notes"
       autoresize=true
       max-rows=10
-      placeholder="Notes"
+      placeholder=(t "task-form.c-item-form-notes.placeholder")
       value=@task.notes
       update=(action (mut @task.notes))
       escape-press=@stopEditing
@@ -71,7 +71,7 @@
               {{#if (eq @task.when "upcoming")}}
                 {{format-date @task.upcomingAt}}
               {{else}}
-                {{@task.when}}
+                {{t (concat "when-options." @task.when)}}
               {{/if}}
             </div>
 
@@ -83,7 +83,7 @@
           </div>
         {{else}}
           <div class="c-item-form__placeholder">
-            Set when
+            {{t "task-form.c-item-form.set_when"}}
           </div>
         {{/if}}
       </div>
@@ -113,7 +113,7 @@
             }}
 
             <div class="c-item-form__value-text">
-              {{or @task.project.name "New project"}}
+              {{or @task.project.name (t "item-project.placeholder")}}
             </div>
 
             <div class="c-item-form__value-reset" {{action "moveToProject" null bubbles=false}}>
@@ -125,12 +125,12 @@
             {{svg-jar "inbox" class="c-icon c-icon--16 c-icon--inbox"}}
 
             <div class="c-item-form__value-text u-capitalize">
-              Inbox
+              {{t "task-form.c-item-form.inbox"}}
             </div>
           </div>
         {{else}}
           <div class="c-item-form__placeholder">
-            No project
+            {{t "task-form.c-item-form.no_project"}}
           </div>
         {{/if}}
       </div>
@@ -168,7 +168,7 @@
           </div>
         {{else}}
           <div class="c-item-form__placeholder">
-            Add deadline
+            {{t "task-form.c-item-form.add_deadline"}}
           </div>
         {{/if}}
       </div>

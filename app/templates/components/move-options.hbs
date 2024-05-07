@@ -3,7 +3,7 @@
     {{svg-jar "inbox" class="c-icon c-icon--inbox c-icon--18"}}
 
     <div class="c-options__text">
-      Inbox
+      {{t "move-options.c-options.inbox"}}
     </div>
   </div>
 </div>
@@ -12,7 +12,7 @@
   <div class="c-options__item" {{action @moveToProject null}}>
     {{svg-jar "no" class="c-icon c-icon--no c-icon--18"}}
 
-    <div class="c-options__text">No project</div>
+    <div class="c-options__text">{{t "move-options.c-options.no_project"}}</div>
   </div>
 
   {{#each (sort-by "order" (filter-by "isActive" true this.data.projects)) as |project|}}
@@ -20,7 +20,7 @@
       {{progress-pie class="c-icon c-icon--project c-icon--18" progress=project.progress}}
 
       <div class="c-options__text">
-        {{or project.name "New project"}}
+        {{or project.name (t "item-project.placeholder")}}
       </div>
     </div>
   {{/each}}

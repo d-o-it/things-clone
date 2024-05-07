@@ -5,16 +5,20 @@ import { alias, not, or } from '@ember/object/computed';
 import { run } from '@ember/runloop';
 
 export default Component.extend({
+  i18n: service(),
   taskEditor: service(),
   itemSelector: service(),
   router: service(),
   classNames: ['c-item', 'js-item'],
   classNameBindings: ['isCanceled', 'isSomeday', 'isEditing', 'isSelected', 'isSortable'],
   task: null,
-  placeholder: 'New To-Do',
   isCanceled: alias('task.isCanceled'),
   isSomeday: or('task.isShownInSomeday', 'task.isShownInProjectSomeday'),
   isSortable: not('isEditing'),
+
+  placeholder: computed('i18n.locale', function() {
+    return this.i18n.t('items-task.placeholder');
+  }),
 
   isProjectShown: computed('router.currentRouteName', function() {
     return ['logbook', 'trash', 'today'].includes(this.router.currentRouteName);

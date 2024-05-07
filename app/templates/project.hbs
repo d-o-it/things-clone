@@ -14,7 +14,7 @@
   {{#if (or hasUpcoming hasSomeday)}}
     <div class="c-folder__buttons">
       <button class="c-folder__button" {{action (toggle "areLaterItemsShown" this)}}>
-        {{if this.areLaterItemsShown "Hide" "Show"}} later items
+        {{if this.areLaterItemsShown (t "project.c-folder.button.later_items_hide") (t "project.c-folder.button.later_items_show")}}
       </button>
     </div>
   {{/if}}
@@ -39,7 +39,7 @@
   {{#if hasLogbook}}
     <div class="c-folder__buttons">
       <button class="c-folder__button" {{action (toggle "areLoggedItemsShown" this)}}>
-        {{if this.areLoggedItemsShown "Hide" "Show"}} logged items
+        {{if this.areLoggedItemsShown (t "project.c-folder.button.logged_items_hide") (t "project.c-folder.button.logged_items_show")}}
       </button>
     </div>
   {{/if}}

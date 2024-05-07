@@ -19,6 +19,10 @@ module.exports = function(environment) {
       namespace: true, // will use the modulePrefix
     },
 
+    i18n: {
+      defaultLocale: 'en'
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
