@@ -4,6 +4,7 @@ import { hasMany } from 'ember-data/relationships';
 import { computed } from '@ember/object';
 
 export default Model.extend({
+  rev: attr('string'),
   name: attr('string'),
 
   tasks: hasMany('task'),

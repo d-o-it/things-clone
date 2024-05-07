@@ -1,0 +1,8 @@
+{
+  "name": "things",
+  "dependencies": {
+    "pouchdb": "^5.4.5",
+    "relational-pouch": "^1.4.4",
+    "pouchdb-authentication": "^1.1.3"
+  }
+}

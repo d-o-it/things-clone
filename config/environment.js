@@ -15,8 +15,8 @@ module.exports = function(environment) {
       tooltipClass: 'c-tooltip'
     },
 
-    'ember-local-storage': {
-      namespace: true, // will use the modulePrefix
+    emberPouch: {
+      localDb: 'things3'
     },
 
     i18n: {

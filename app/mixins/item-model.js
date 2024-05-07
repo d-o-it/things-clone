@@ -13,6 +13,7 @@ const WHEN = ['today', 'upcoming', 'anytime', 'someday'];
 const STATUSES = ['new', 'completed', 'canceled'];
 
 export default Mixin.create({
+  rev: attr('string'),
   name: attr('string'),
   notes: attr('string'),
   order: attr('number', { defaultValue: 0 }),

@@ -38,5 +38,7 @@ module.exports = function(defaults) {
     }
   });
 
+  app.import('vendor/pouchdb.authentication.js');
+
   return app.toTree();
 };
