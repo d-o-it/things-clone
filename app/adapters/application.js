@@ -7,12 +7,15 @@ import { assert } from '@ember/debug';
 function createDb() {
   assert('emberPouch.localDb must be set', !isEmpty(config.emberPouch.localDb));
 
-  let db = new PouchDB(config.emberPouch.localDb);
+  const db = new PouchDB(config.emberPouch.localDb);
 
   if (config.emberPouch.remoteDb) {
-    let remoteDb = new PouchDB(config.emberPouch.remoteDb, { skip_setup: true });
-
-    remoteDb.logIn(config.emberPouch.user, config.emberPouch.pass);
+    const remoteDb = new PouchDB(config.emberPouch.remoteDb, {
+      auth: {
+        username: config.emberPouch.user,
+        password: config.emberPouch.pass
+      }
+    });
 
     db.sync(remoteDb, {
       live: true,
